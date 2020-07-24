@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+}
+
+#container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: linear-gradient(-45deg, #00b5d4, #65eafc, #0ebdf1, #00c0fa);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+#card {
+    background: white;
+    width: 600px;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    display: flex;
+}
+
+.card-shadow {
+    -webkit-box-shadow: 0px 0px 19px 6px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: 0px 0px 19px 6px rgba(0, 0, 0, 0.32);
+    box-shadow: 0px 0px 19px 6px rgba(0, 0, 0, 0.32);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#data {
+    margin-top: 20px;
+    font-size: 40px;
+    text-align: center;
+    flex: 1;
+}
+
+#specialisation {
+    margin-top: 0;
+    font-size: 25px;
+}
