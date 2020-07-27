@@ -52,4 +52,5 @@ body {
 #specialisation {
     margin-top: 0;
     font-size: 25px;
+    display: block;
 }
