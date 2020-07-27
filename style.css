@@ -41,6 +41,8 @@ body {
     width: 600px;
     position: absolute;
     margin: auto;
+    padding: 10px;
+    border-radius: 10px;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
@@ -58,16 +60,84 @@ body {
     margin-top: 20px;
     font-size: 40px;
     text-align: center;
+    font-weight: bold;
     flex: 1;
 }
 
-#specialisation {
+.info {
+    font-weight: normal;
     margin-top: 0;
     font-size: 25px;
     display: block;
     opacity: 0;
     animation: TopToDown 1s ease-in;
     animation-fill-mode: forwards;
+    max-width: 600px;
+}
+
+.info:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.info:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.info:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.contact-wrapper {
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+}
+
+.contact {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.contact-wrapper a:nth-child(1) .contact {
+    background-color: #3b5998;
+}
+
+.contact-wrapper a:nth-child(2) .contact {
+    opacity: 0;
+    background-color: #0e76a8;
+    animation: TopToDown 1s ease-in forwards;
+    animation-delay: 4s;
+}
+
+.contact-wrapper a:nth-child(3) .contact {
+    opacity: 0;
+    background-color: #211F1F;
+    animation: TopToDown 1s ease-in forwards;
+    animation-delay: 5s;
+}
+
+.contact-wrapper a:nth-child(4) .contact {
+    opacity: 0;
+    background-color: #C13584;
+    animation: TopToDown 1s ease-in forwards;
+    animation-delay: 6s;
+}
+
+.contact-wrapper a .contact:hover {
+    background-color: white;
+    color: black;
+}
+
+.android {
+    color: #a4c639
 }
 
 @keyframes gradient {
