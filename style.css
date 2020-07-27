@@ -36,7 +36,12 @@ body {
     }
 }
 
+.image-wrapper {
+    margin: auto;
+}
+
 .card-wrapper {
+    position: relative;
     background: white;
     width: 600px;
     position: absolute;
