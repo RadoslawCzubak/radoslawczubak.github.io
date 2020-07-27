@@ -137,7 +137,16 @@ body {
 }
 
 .android {
-    color: #a4c639
+    color: black;
+    animation: color-change 0.5s linear forwards;
+    animation-delay: 1s;
+}
+
+@keyframes color-change {
+    from {}
+    to {
+        color: #a4c639;
+    }
 }
 
 @keyframes gradient {
