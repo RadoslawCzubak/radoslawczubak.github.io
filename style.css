@@ -13,7 +13,30 @@ body {
     animation: gradient 15s ease infinite;
 }
 
-#card {
+@keyframes card-appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes TopToDown {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.card-wrapper {
     background: white;
     width: 600px;
     position: absolute;
@@ -22,12 +45,29 @@ body {
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     display: flex;
+    animation: card-appear 1.5s ease-in-out;
 }
 
 .card-shadow {
     -webkit-box-shadow: 0px 0px 19px 6px rgba(0, 0, 0, 0.32);
     -moz-box-shadow: 0px 0px 19px 6px rgba(0, 0, 0, 0.32);
     box-shadow: 0px 0px 19px 6px rgba(0, 0, 0, 0.32);
+}
+
+.data-wrapper {
+    margin-top: 20px;
+    font-size: 40px;
+    text-align: center;
+    flex: 1;
+}
+
+#specialisation {
+    margin-top: 0;
+    font-size: 25px;
+    display: block;
+    opacity: 0;
+    animation: TopToDown 1s ease-in;
+    animation-fill-mode: forwards;
 }
 
 @keyframes gradient {
@@ -40,17 +80,4 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-#data {
-    margin-top: 20px;
-    font-size: 40px;
-    text-align: center;
-    flex: 1;
-}
-
-#specialisation {
-    margin-top: 0;
-    font-size: 25px;
-    display: block;
 }
