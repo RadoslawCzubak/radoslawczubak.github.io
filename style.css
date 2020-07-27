@@ -43,7 +43,7 @@ body {
 .card-wrapper {
     position: relative;
     background: white;
-    width: 600px;
+    max-width: fit-content;
     position: absolute;
     margin: auto;
     padding: 10px;
@@ -63,6 +63,7 @@ body {
 
 .data-wrapper {
     margin-top: 20px;
+    margin-right: 10px;
     font-size: 40px;
     text-align: center;
     font-weight: bold;
