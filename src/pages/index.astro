@@ -3,12 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import laptopImage from "../assets/laptop.png";
 import Image from "astro/components/Image.astro";
+import WorkInProgressDialog from "../components/WorkInProgressDialog.astro";
 import "../style/global.css";
 ---
 
 <Layout title="RADOSLAV">
   <main>
     <!-- <Header /> -->
+    <div id="work-in-progress-dialog">
+      <WorkInProgressDialog />
+    </div>
     <div class="hero">
       <div id="hero-text-container">
         <div id="hero-text">
@@ -24,6 +28,57 @@ import "../style/global.css";
 </Layout>
 
 <style>
+  main {
+    position: relative;
+  }
+
+  #work-in-progress-dialog {
+    position: absolute;
+    font-family: Montserrat;
+    font-size: 20px;
+    color: white;
+    background:
+      radial-gradient(
+          circle at 100% 100%,
+          #0b0b0b 0,
+          #0b0b0b 10px,
+          transparent 10px
+        )
+        0% 0%/12px 12px no-repeat,
+      radial-gradient(
+          circle at 0 100%,
+          #0b0b0b 0,
+          #0b0b0b 10px,
+          transparent 10px
+        )
+        100% 0%/12px 12px no-repeat,
+      radial-gradient(
+          circle at 100% 0,
+          #0b0b0b 0,
+          #0b0b0b 10px,
+          transparent 10px
+        )
+        0% 100%/12px 12px no-repeat,
+      radial-gradient(circle at 0 0, #0b0b0b 0, #0b0b0b 10px, transparent 10px)
+        100% 100%/12px 12px no-repeat,
+      linear-gradient(#0b0b0b, #0b0b0b) 50% 50% / calc(100% - 4px)
+        calc(100% - 24px) no-repeat,
+      linear-gradient(#0b0b0b, #0b0b0b) 50% 50% / calc(100% - 24px)
+        calc(100% - 4px) no-repeat,
+      linear-gradient(90deg, #d60092 0%, #0094ff 100%);
+    border-radius: 12px;
+    padding-left: 22px;
+    padding-right: 22px;
+    box-sizing: content-box;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+  }
+
   .hero {
     max-height: 100vh;
     height: 100vh;
