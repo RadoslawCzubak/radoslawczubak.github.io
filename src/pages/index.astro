@@ -15,7 +15,7 @@ import "../style/global.css";
     </div>
     <div class="hero">
       <div id="hero-text-container">
-        <div id="hero-text">
+        <div id="hero-text" class="prevent-select">
           <p>
             Hi, I’m <span id="dev-name">Radoslav</span><br /> Software Developer
           </p>
@@ -45,6 +45,10 @@ import "../style/global.css";
   }
 
   #work-in-progress-dialog {
+    animation: 1s ease-out 0s 1 fadeIn;
+    animation-delay: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
     position: absolute;
     font-family: Montserrat;
     font-size: 20px;
