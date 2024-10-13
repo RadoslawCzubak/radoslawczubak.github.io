@@ -16,7 +16,9 @@ import "../style/global.css";
     <div class="hero">
       <div id="hero-text-container">
         <div id="hero-text">
-          <p>Hi, I’m Radoslav <br /> Software Developer</p>
+          <p>
+            Hi, I’m <span id="dev-name">Radoslav</span><br /> Software Developer
+          </p>
           <p>I’m ready to become your one man army in IT.</p>
         </div>
       </div>
@@ -30,6 +32,16 @@ import "../style/global.css";
 <style>
   main {
     position: relative;
+  }
+
+  p {
+    margin: 16px 0 16px 0;
+  }
+
+  #dev-name {
+    background-image: linear-gradient(90deg, #fff 0%, #0094ff 100%);
+    color: transparent;
+    background-clip: text;
   }
 
   #work-in-progress-dialog {
