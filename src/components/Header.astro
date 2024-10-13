@@ -1,0 +1,18 @@
+---
+import "../style/global.css";
+import MenuItem from "./MenuItem.astro";
+---
+
+<header class="header">
+  <MenuItem name="test" />
+  <MenuItem name="test2" />
+  <MenuItem name="test3" />
+</header>
+
+<style>
+  .header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+</style>
