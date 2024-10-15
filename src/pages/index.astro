@@ -49,7 +49,6 @@ import "../style/global.css";
     animation-delay: 1s;
     opacity: 0;
     animation-fill-mode: forwards;
-    position: absolute;
     font-family: Montserrat;
     font-size: 20px;
     color: white;
@@ -85,14 +84,12 @@ import "../style/global.css";
     border-radius: 12px;
     padding-left: 22px;
     padding-right: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     box-sizing: content-box;
-    align-self: center;
-    margin-left: auto;
-    margin-right: auto;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%, 0%);
     text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   .hero {
@@ -108,9 +105,8 @@ import "../style/global.css";
   }
 
   #hero-text-container {
-    float: inline-start;
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    padding-top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,16 +125,41 @@ import "../style/global.css";
   }
 
   #hero-image {
-    float: left;
-    width: 50%;
-    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 36px;
   }
 
   #hero-image img {
     height: auto;
     width: 80%;
+  }
+
+  @media only screen and (min-width: 768px) {
+    #work-in-progress-dialog {
+      position: absolute;
+      align-self: center;
+      left: 50%;
+      top: 5%;
+      transform: translate(-50%, 0%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #hero-text-container {
+      padding-top: 0%;
+      float: inline-start;
+      height: 100%;
+      width: 50%;
+    }
+
+    #hero-image {
+      float: left;
+      width: 50%;
+      height: 100%;
+      padding-top: 0px;
+    }
   }
 </style>
