@@ -21,6 +21,7 @@ import "../style/global.css";
             Hi, I’m <span id="dev-name">Radoslav</span><br /> Software Developer
           </p>
           <p>I’m ready to become your one man army in IT.</p>
+          <a href="https://blog.radoslav.pl" id="hero-cta-btn">Visit my blog</a>
         </div>
       </div>
       <div id="hero-image">
@@ -28,26 +29,29 @@ import "../style/global.css";
       </div>
     </div>
     <div id="cooperation-section">
-      <Image
-        src={logoPlaceholderImage}
-        alt="cooperation company logo"
-        class="cooperation-company-logo"
-      />
-      <Image
-        src={logoPlaceholderImage}
-        alt="cooperation company logo"
-        class="cooperation-company-logo"
-      />
-      <Image
-        src={logoPlaceholderImage}
-        alt="cooperation company logo"
-        class="cooperation-company-logo"
-      />
-      <Image
-        src={logoPlaceholderImage}
-        alt="cooperation company logo"
-        class="cooperation-company-logo"
-      />
+      <h2>I cooperated with</h2>
+      <div id="cooperation-logo-container">
+        <Image
+          src={logoPlaceholderImage}
+          alt="cooperation company logo"
+          class="cooperation-company-logo"
+        />
+        <Image
+          src={logoPlaceholderImage}
+          alt="cooperation company logo"
+          class="cooperation-company-logo"
+        />
+        <Image
+          src={logoPlaceholderImage}
+          alt="cooperation company logo"
+          class="cooperation-company-logo"
+        />
+        <Image
+          src={logoPlaceholderImage}
+          alt="cooperation company logo"
+          class="cooperation-company-logo"
+        />
+      </div>
     </div>
   </main>
 </Layout>
@@ -69,10 +73,23 @@ import "../style/global.css";
 
   #cooperation-section {
     background-color: #282828;
+    padding: 8px 0px;
+  }
+
+  h2 {
+    color: white;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-family: Montserrat, Helvetica, sans-serif;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+
+  #cooperation-logo-container {
     max-width: 100%;
     display: grid;
     gap: 5vw;
-    padding: 20px 0px;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -84,7 +101,7 @@ import "../style/global.css";
   }
 
   @media only screen and (min-width: 768px) {
-    #cooperation-section {
+    #cooperation-logo-container {
       padding: 20px 10%;
     }
     .cooperation-company-logo {
@@ -94,7 +111,7 @@ import "../style/global.css";
     }
   }
   @media only screen and (min-width: 1200px) {
-    #cooperation-section {
+    #cooperation-logo-container {
       grid-template-columns: repeat(4, 1fr);
     }
     .cooperation-company-logo {
@@ -151,6 +168,25 @@ import "../style/global.css";
     margin-right: 10%;
   }
 
+  #hero-cta-btn {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Montserrat, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    background-color: #0094ff;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  #hero-cta-btn:hover {
+    opacity: 90%;
+  }
+
+  #hero-cta-btn:active {
+    background-color: #0067b1;
+  }
+
   .hero-section {
     max-height: 100vh;
     height: auto;
@@ -176,7 +212,7 @@ import "../style/global.css";
     color: white;
   }
 
-  #hero-text p:last-child {
+  #hero-text p:nth-child(2) {
     font-size: 32px;
     font-weight: normal;
   }
