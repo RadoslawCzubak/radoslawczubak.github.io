@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import laptopImage from "../assets/laptop.png";
+import logoPlaceholderImage from "../assets/logoPlaceholderImage.png";
 import Image from "astro/components/Image.astro";
 import WorkInProgressDialog from "../components/WorkInProgressDialog.astro";
 import "../style/global.css";
@@ -13,7 +14,7 @@ import "../style/global.css";
     <div id="work-in-progress-dialog">
       <WorkInProgressDialog />
     </div>
-    <div class="hero">
+    <div class="hero-section">
       <div id="hero-text-container">
         <div id="hero-text" class="prevent-select">
           <p>
@@ -25,6 +26,28 @@ import "../style/global.css";
       <div id="hero-image">
         <Image src={laptopImage} alt="laptop" />
       </div>
+    </div>
+    <div id="cooperation-section">
+      <Image
+        src={logoPlaceholderImage}
+        alt="cooperation company logo"
+        class="cooperation-company-logo"
+      />
+      <Image
+        src={logoPlaceholderImage}
+        alt="cooperation company logo"
+        class="cooperation-company-logo"
+      />
+      <Image
+        src={logoPlaceholderImage}
+        alt="cooperation company logo"
+        class="cooperation-company-logo"
+      />
+      <Image
+        src={logoPlaceholderImage}
+        alt="cooperation company logo"
+        class="cooperation-company-logo"
+      />
     </div>
   </main>
 </Layout>
@@ -42,6 +65,42 @@ import "../style/global.css";
     background-image: linear-gradient(90deg, #fff 0%, #0094ff 100%);
     color: transparent;
     background-clip: text;
+  }
+
+  #cooperation-section {
+    background-color: #282828;
+    max-width: 100%;
+    display: grid;
+    gap: 5vw;
+    padding: 20px 0px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cooperation-company-logo {
+    margin: 0 auto;
+    margin: 0 auto;
+    height: auto;
+    max-width: 200px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    #cooperation-section {
+      padding: 20px 10%;
+    }
+    .cooperation-company-logo {
+      height: 60px;
+      width: auto;
+      max-width: none;
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    #cooperation-section {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .cooperation-company-logo {
+      height: 60px;
+      width: auto;
+    }
   }
 
   #work-in-progress-dialog {
@@ -92,12 +151,11 @@ import "../style/global.css";
     margin-right: 10%;
   }
 
-  .hero {
+  .hero-section {
     max-height: 100vh;
-    height: 100vh;
+    height: auto;
+    padding: 10% 10%;
     max-width: 100vw;
-    padding-left: 10%;
-    padding-right: 10%;
     background-image: url("../assets/neon_bg_1.png");
     background-position: center center;
     background-size: cover;
@@ -106,7 +164,6 @@ import "../style/global.css";
 
   #hero-text-container {
     width: 100%;
-    padding-top: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,6 +203,11 @@ import "../style/global.css";
       transform: translate(-50%, 0%);
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .hero-section {
+      height: 100vh;
+      padding: 0 10%;
     }
 
     #hero-text-container {
