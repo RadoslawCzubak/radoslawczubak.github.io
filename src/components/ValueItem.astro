@@ -1,0 +1,42 @@
+---
+const { icon, title, text } = Astro.props;
+import Image from "astro/components/Image.astro";
+---
+
+<div class="value-card">
+  <Image src={icon} alt={title} class="value-card-img" />
+  <h3>{title}</h3>
+  <p>{text}</p>
+</div>
+
+<style>
+  .value-card {
+    max-width: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(11.5px);
+    -webkit-backdrop-filter: blur(11.5px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-sizing: border-box;
+    padding: 24px;
+  }
+
+  .value-card-img {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .value-card h3 {
+    max-width: none;
+    width: auto;
+    color: white;
+    text-align: center;
+  }
+
+  .value-card p {
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+  }
+</style>

@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import laptopImage from "../assets/laptop.png";
+import HeroSection from "../components/HeroSection.astro";
+import qualityIcon from "../assets/quality_icon.svg";
 import logoPlaceholderImage from "../assets/logoPlaceholderImage.png";
 import Image from "astro/components/Image.astro";
 import WorkInProgressDialog from "../components/WorkInProgressDialog.astro";
 import "../style/global.css";
+import ValueItem from "../components/ValueItem.astro";
 ---
 
 <Layout title="RADOSLAV">
@@ -14,22 +15,9 @@ import "../style/global.css";
     <div id="work-in-progress-dialog">
       <WorkInProgressDialog />
     </div>
-    <div class="hero-section">
-      <div id="hero-text-container">
-        <div id="hero-text" class="prevent-select">
-          <p>
-            Hi, I’m <span id="dev-name">Radoslav</span><br /> Software Developer
-          </p>
-          <p>I’m ready to become your one man army in IT.</p>
-          <a href="https://blog.radoslav.pl" id="hero-cta-btn">Visit my blog</a>
-        </div>
-      </div>
-      <div id="hero-image">
-        <Image src={laptopImage} alt="laptop" />
-      </div>
-    </div>
+    <HeroSection />
     <div id="cooperation-section">
-      <h2>I cooperated with</h2>
+      <h2>Some of my clients</h2>
       <div id="cooperation-logo-container">
         <Image
           src={logoPlaceholderImage}
@@ -53,22 +41,80 @@ import "../style/global.css";
         />
       </div>
     </div>
+    <div id="about-section">
+      <div>
+        <h2>About me</h2>
+        <p id="about-text">
+          I’m a passionate and dedicated software developer specializing in
+          mobile applications. With years of experience in building
+          high-performance, user-friendly apps, I help businesses and
+          individuals bring their ideas to life on mobile platforms. <br /><br
+          />While mobile development is my core focus, I’m not afraid to explore
+          new technologies and tools to ensure that the best solutions are
+          delivered for each project. From backend systems to web-based
+          applications, I embrace challenges that allow me to grow and expand my
+          skill set. <br /><br />I believe in continuous improvement, not only
+          for the products I create but also in the way I work and collaborate
+          with clients. Every project is an opportunity to innovate, learn, and
+          craft solutions that truly make a difference.
+        </p>
+      </div>
+      <div id="value-container">
+        <ValueItem
+          icon={qualityIcon}
+          title="Quality"
+          text="I prioritize craftsmanship, focusing on building high-quality mobile applications with care. My approach ensures excellent performance, seamless user experience, and lasting value, rather than just quick project completion."
+        />
+        <ValueItem
+          icon={qualityIcon}
+          title="Trust"
+          text="Open and transparent communication is at the heart of every project. We ensure that clients are informed at every stage, building a partnership based on honesty and reliability."
+        />
+        <ValueItem
+          icon={qualityIcon}
+          title="Flexibility"
+          text="Each project is unique, and so are our solutions. We adapt to your specific needs, tailoring our approach to deliver exactly what you envision, no matter how complex or customized."
+        />
+      </div>
+    </div>
   </main>
 </Layout>
 
 <style>
-  main {
-    position: relative;
-  }
-
   p {
     margin: 16px 0 16px 0;
   }
 
-  #dev-name {
-    background-image: linear-gradient(90deg, #fff 0%, #0094ff 100%);
-    color: transparent;
-    background-clip: text;
+  #about-section {
+    color: white;
+    font-family: Montserrat, Helvetica, sans-serif;
+  }
+
+  #about-text {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  #value-container {
+    display: grid;
+    background: url("../assets/neon_bg_2.png");
+    background-position: center center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(1, minmax(200px, 300px));
+    max-width: 100%;
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    #value-container {
+      grid-template-columns: repeat(3, minmax(250px, 280px));
+      padding: 120px 0;
+      gap: 10%;
+    }
   }
 
   #cooperation-section {
@@ -89,34 +135,41 @@ import "../style/global.css";
   #cooperation-logo-container {
     max-width: 100%;
     display: grid;
-    gap: 5vw;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 300px));
+    justify-content: center;
+    justify-items: center;
+    padding: 10px;
   }
 
   .cooperation-company-logo {
-    margin: 0 auto;
-    margin: 0 auto;
-    height: auto;
-    max-width: 200px;
+    height: 40px;
+    max-width: 100%;
+    width: auto;
+    box-sizing: border-box;
   }
 
   @media only screen and (min-width: 768px) {
     #cooperation-logo-container {
-      padding: 20px 10%;
+      grid-template-rows: 60px;
+      overflow: hidden;
+      padding: 20px 20px;
+      gap: 20px;
+      grid-template-columns: repeat(2, minmax(200px, 300px));
     }
     .cooperation-company-logo {
-      height: 60px;
+      height: 40px;
       width: auto;
       max-width: none;
     }
   }
   @media only screen and (min-width: 1200px) {
     #cooperation-logo-container {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(200px, 300px));
     }
     .cooperation-company-logo {
-      height: 60px;
-      width: auto;
+      max-width: 100%; /* Content width will not exceed grid cell width */
+      box-sizing: border-box; /* Includes padding within width */
     }
   }
 
@@ -168,68 +221,6 @@ import "../style/global.css";
     margin-right: 10%;
   }
 
-  #hero-cta-btn {
-    font-size: 16px;
-    font-weight: normal;
-    font-family: Montserrat, Helvetica, sans-serif;
-    color: white;
-    text-decoration: none;
-    background-color: #0094ff;
-    padding: 16px;
-    border-radius: 8px;
-  }
-
-  #hero-cta-btn:hover {
-    opacity: 90%;
-  }
-
-  #hero-cta-btn:active {
-    background-color: #0067b1;
-  }
-
-  .hero-section {
-    max-height: 100vh;
-    height: auto;
-    padding: 10% 10%;
-    max-width: 100vw;
-    background-image: url("../assets/neon_bg_1.png");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  #hero-text-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #hero-text {
-    font-size: 52px;
-    font-weight: bold;
-    font-family: Montserrat, Helvetica, sans-serif;
-    color: white;
-  }
-
-  #hero-text p:nth-child(2) {
-    font-size: 32px;
-    font-weight: normal;
-  }
-
-  #hero-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 36px;
-  }
-
-  #hero-image img {
-    height: auto;
-    width: 80%;
-  }
-
   @media only screen and (min-width: 768px) {
     #work-in-progress-dialog {
       position: absolute;
@@ -239,25 +230,6 @@ import "../style/global.css";
       transform: translate(-50%, 0%);
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .hero-section {
-      height: 100vh;
-      padding: 0 10%;
-    }
-
-    #hero-text-container {
-      padding-top: 0%;
-      float: inline-start;
-      height: 100%;
-      width: 50%;
-    }
-
-    #hero-image {
-      float: left;
-      width: 50%;
-      height: 100%;
-      padding-top: 0px;
     }
   }
 </style>

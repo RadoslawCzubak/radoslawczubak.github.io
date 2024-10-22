@@ -1,0 +1,110 @@
+---
+import laptopImage from "../assets/laptop.png";
+import Image from "astro/components/Image.astro";
+---
+
+<div class="hero-section">
+  <div id="hero-text-container">
+    <div id="hero-text" class="prevent-select">
+      <p>
+        Hi, I’m <span id="dev-name">Radoslav</span><br /> Software Developer
+      </p>
+      <p>I’m ready to become your one man army in IT.</p>
+      <a href="https://blog.radoslav.pl" id="hero-cta-btn">Visit my blog</a>
+    </div>
+  </div>
+  <div id="hero-image">
+    <Image src={laptopImage} alt="laptop" />
+  </div>
+</div>
+
+<style>
+  #dev-name {
+    background-image: linear-gradient(90deg, #fff 0%, #0094ff 100%);
+    color: transparent;
+    background-clip: text;
+  }
+
+  #hero-cta-btn {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Montserrat, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    background-color: #0094ff;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  #hero-cta-btn:hover {
+    opacity: 90%;
+  }
+
+  #hero-cta-btn:active {
+    background-color: #0067b1;
+  }
+
+  .hero-section {
+    max-height: 100vh;
+    height: auto;
+    padding: 10% 10%;
+    max-width: 100vw;
+    background-image: url("../assets/neon_bg_1.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #hero-text-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #hero-text {
+    font-size: 52px;
+    font-weight: bold;
+    font-family: Montserrat, Helvetica, sans-serif;
+    color: white;
+  }
+
+  #hero-text p:nth-child(2) {
+    font-size: 32px;
+    font-weight: normal;
+  }
+
+  #hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 36px;
+  }
+
+  #hero-image img {
+    height: auto;
+    width: 80%;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .hero-section {
+      height: 100vh;
+      padding: 0 10%;
+    }
+
+    #hero-text-container {
+      padding-top: 0%;
+      float: inline-start;
+      height: 100%;
+      width: 50%;
+    }
+
+    #hero-image {
+      float: left;
+      width: 50%;
+      height: 100%;
+      padding-top: 0px;
+    }
+  }
+</style>
