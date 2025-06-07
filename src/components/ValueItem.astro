@@ -11,20 +11,24 @@ import Image from "astro/components/Image.astro";
 
 <style>
   .value-card {
-    max-width: 100%;
+    max-width: 350px;
     width: 100%;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(11.5px);
     -webkit-backdrop-filter: blur(11.5px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    box-sizing: border-box;
+    padding: 20px;
     padding: 24px;
   }
 
   .value-card-img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 150px; /* Limit the maximum height of the image */
     margin: 0 auto;
+    display: block; /* Center the image */
+    margin-bottom: 10px;
   }
 
   .value-card h3 {
@@ -32,6 +36,8 @@ import Image from "astro/components/Image.astro";
     width: auto;
     color: white;
     text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
 
   .value-card p {

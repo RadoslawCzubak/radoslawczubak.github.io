@@ -87,11 +87,16 @@ const { title, description, screenshots } = Astro.props;
   }
 
   .project-card-content {
+    display: flex;
+    flex-direction: column;
     @apply text-white;
   }
 
   .project-title {
     @apply text-xl font-bold mb-2;
+  }
+
+  .project-description {
   }
 
   .project-description {
