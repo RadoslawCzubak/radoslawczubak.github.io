@@ -1,0 +1,134 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  title: string;
+  description: string;
+  screenshots: string[];
+}
+
+const { title, description, screenshots } = Astro.props;
+---
+
+<div class="project-card">
+  <div class="project-card-content">
+    <div class="screenshots-container">
+      {
+        screenshots.slice(0, 3).map((screenshot, index) => (
+          <div class="mock-phone">
+            <div class="screen">
+              <Image
+                src={screenshot}
+                alt={`Screenshot ${index + 1} of ${title}`}
+                width={200}
+                height={400}
+                class="screenshot-image"
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <h3 class="project-title">{title}</h3>
+    <p class="project-description">{description}</p>
+  </div>
+</div>
+
+<style>
+  .project-card {
+    @apply p-6 rounded-lg relative overflow-hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-clip: padding-box;
+    position: relative;
+    background:
+      radial-gradient(
+          circle at 100% 100%,
+          #0b0b0b 0,
+          #0b0b0b 10px,
+          transparent 10px
+        )
+        0% 0%/12px 12px no-repeat,
+      radial-gradient(
+          circle at 0 100%,
+          #0b0b0b 0,
+          #0b0b0b 10px,
+          transparent 10px
+        )
+        100% 0%/12px 12px no-repeat,
+      radial-gradient(
+          circle at 100% 0,
+          #0b0b0b 0,
+          #0b0b0b 10px,
+          transparent 10px
+        )
+        0% 100%/12px 12px no-repeat,
+      radial-gradient(circle at 0 0, #0b0b0b 0, #0b0b0b 10px, transparent 10px)
+        100% 100%/12px 12px no-repeat,
+      linear-gradient(#0b0b0b, #0b0b0b) 50% 50% / calc(100% - 4px)
+        calc(100% - 24px) no-repeat,
+      linear-gradient(#0b0b0b, #0b0b0b) 50% 50% / calc(100% - 24px)
+        calc(100% - 4px) no-repeat,
+      linear-gradient(90deg, #d60092 0%, #0094ff 100%);
+
+    border-radius: 12px;
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: -2px; /* Adjust to control border thickness */
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  .project-card-content {
+    display: flex;
+    flex-direction: column;
+    @apply text-white;
+  }
+
+  .project-title {
+    @apply text-xl font-bold mb-2;
+  }
+
+  .project-description {
+    @apply text-sm mb-4;
+  }
+
+  .screenshots-container {
+    @apply flex justify-center gap-4 mt-4;
+    padding: 12px;
+  }
+
+  .mock-phone {
+    width: 100px; /* Adjust mock phone size as needed */
+    height: 200px; /* Adjust mock phone size as needed */
+    border-radius: 12px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .screen {
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .screenshot-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+</style>

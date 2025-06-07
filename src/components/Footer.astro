@@ -1,0 +1,13 @@
+---
+import footerLogo from "../assets/footer_logo.svg";
+import { Image } from "astro:assets";
+---
+
+<footer class="text-center text-24 text-white" style="font-family: 'Montserrat', sans-serif;">
+  <div>
+    Designed and made with ❤️
+  </div>
+  <div class="pb-8">
+    by <Image src={footerLogo} alt="RADOSLAV logo" height={20} class="px-2 inline-block align-middle" />
+  </div>
+</footer>

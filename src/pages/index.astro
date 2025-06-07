@@ -2,11 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/HeroSection.astro";
 import qualityIcon from "../assets/quality_icon.svg";
-import logoPlaceholderImage from "../assets/logoPlaceholderImage.png";
+import logoPlaceholderImage from "../assets/logoPlaceholderImage.webp";
 import Image from "astro/components/Image.astro";
 import WorkInProgressDialog from "../components/WorkInProgressDialog.astro";
 import "../style/global.css";
 import ValueItem from "../components/ValueItem.astro";
+import ProjectSection from "../components/ProjectSection.astro";
 ---
 
 <Layout title="RADOSLAV">
@@ -77,6 +78,7 @@ import ValueItem from "../components/ValueItem.astro";
         />
       </div>
     </div>
+    <ProjectSection />
   </main>
 </Layout>
 
@@ -88,6 +90,7 @@ import ValueItem from "../components/ValueItem.astro";
   #about-section {
     color: white;
     font-family: Montserrat, Helvetica, sans-serif;
+    padding-top: 20px;
   }
 
   #about-text {
@@ -97,26 +100,17 @@ import ValueItem from "../components/ValueItem.astro";
 
   #value-container {
     display: grid;
-    background: url("../assets/neon_bg_2.png");
+    background: url("../assets/neon_bg_2.webp");
     background-position: center center;
     background-size: auto 100%;
     background-repeat: no-repeat;
     justify-content: center;
-    justify-items: center;
-    grid-template-columns: repeat(1, minmax(200px, 300px));
-    max-width: 100%;
+ justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 30px 0;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    #value-container {
-      grid-template-columns: repeat(3, minmax(250px, 280px));
-      padding: 120px 0;
-      gap: 10%;
+ padding: 40px 20px;
     }
-  }
-
+ 
   #cooperation-section {
     background-color: #282828;
     padding: 8px 0px;
@@ -174,6 +168,7 @@ import ValueItem from "../components/ValueItem.astro";
   }
 
   #work-in-progress-dialog {
+    margin-top: 20px;
     animation: 1s ease-out 0s 1 fadeIn;
     animation-delay: 1s;
     opacity: 0;
