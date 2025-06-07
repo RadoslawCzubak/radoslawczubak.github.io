@@ -15,7 +15,7 @@ const { title, description, screenshots } = Astro.props;
     <div class="screenshots-container">
       {
         screenshots.slice(0, 3).map((screenshot, index) => (
-          <div class="mock-phone" key={index}>
+          <div class="mock-phone">
             <div class="screen">
               <Image
                 src={screenshot}
